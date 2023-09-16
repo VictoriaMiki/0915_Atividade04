@@ -39,3 +39,20 @@ for (let i = 0; i < cont; i++) {
     console.log(linha)
     linha = "" // Limpa a string linha
 }
+
+// Resolução do Professor: 
+
+let nomePessoa = prompt("Digite o nome da pessoa: ")
+let textoPessoa = ''
+while(nomePessoa != ''){
+    textoPessoa += `${nomePessoa} | `
+    let hobbyPessoa = prompt("Digite um hobby da pessoa: ")
+    while(hobbyPessoa != ''){
+        textoPessoa += `${hobbyPessoa},`
+        hobbyPessoa = prompt("Digite outro hobby da pessoa (ou vazio para sair): ")
+    }
+    textoPessoa = textoPessoa.slice(0,-1) // Tira o último caractere do textoPessoa, no caso, tira a "," que estava sobrando
+    textoPessoa += '\r\n' // Quebra de linha
+    nomePessoa = prompt("Digite o nome de outra pessoa (vazio para sair): ")
+}
+console.log(textoPessoa)
